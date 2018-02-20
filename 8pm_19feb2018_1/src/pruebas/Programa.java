@@ -6,21 +6,19 @@ package pruebas;
  */
 public class Programa {
     public static void main(String[] args) {
-        int i = 2;
-        int j = 10;
+        int i = 0;
         
-        //&& --> short circuit
-        //&
-        
-        if(i == j & evalua(i,i)) { // false && true = false
-            System.out.println("ok1"); //NO se muestra
+        for (i = 0; i < 10; i++) {
+            //System.out.println(i);            
+            
+            i += 20;
         }
-    }
-    
-    public static boolean evalua(int numero, int comparador) {
         
-        System.out.println("ok2"); //SI se muestra
-        
-        return (numero == comparador);
+        i = 0;
+        while(i< 10) {
+            System.out.println(i);
+            
+            i += 1; //i = i + 1    i++; ++i;
+        }
     }
 }
