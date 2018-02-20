@@ -6,19 +6,14 @@ package pruebas;
  */
 public class Programa {
     public static void main(String[] args) {
-        int i = 0;
+        String s1 = "hola";
+        String s2 = "mundo";
+        String sformato = "%2$s %1$s";
         
-        for (i = 0; i < 10; i++) {
-            //System.out.println(i);            
-            
-            i += 20;
-        }
+        String mensaje1 = s2 + " " + s1;        
+        String mensaje2 = String.format(sformato,s1,s2);        
         
-        i = 0;
-        while(i< 10) {
-            System.out.println(i);
-            
-            i += 1; //i = i + 1    i++; ++i;
-        }
+        System.out.println(mensaje1);
+        System.out.println(mensaje2);
     }
 }
