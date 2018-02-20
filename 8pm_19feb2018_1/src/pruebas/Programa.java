@@ -5,24 +5,22 @@ package pruebas;
  * @author ONivia
  */
 public class Programa {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         int i = 2;
+        int j = 10;
         
-        switch (i) {
-            case 10:
-                System.out.println("i si es 10");
-                break;
-            case 2:
-            case 5:
-                System.out.println("i es igual a 5 o a 2");                
-                break;
-            default:
-                System.out.println("i ni es 5 ni es 10");
-                break;
+        //&& --> short circuit
+        //&
+        
+        if(i == j & evalua(i,i)) { // false && true = false
+            System.out.println("ok1"); //NO se muestra
         }
+    }
+    
+    public static boolean evalua(int numero, int comparador) {
+        
+        System.out.println("ok2"); //SI se muestra
+        
+        return (numero == comparador);
     }
 }
