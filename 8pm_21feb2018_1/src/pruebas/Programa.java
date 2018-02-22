@@ -14,19 +14,21 @@ public class Programa {
         String nombre2 = "";
         String nombre3 = "";
         
-        String[] nombres = {"uno","tres","cinco"};
+        //[2][3][4]
+        int[][][] numeros =
+        {
+            {
+                {3,5,6,7},
+                {30,51,66,71},
+                {31,52,63,72}                    
+            },
+            {
+                {32,53,62,73},
+                {33,54,69,74},
+                {34,55,60,75}                    
+            }
+        };
         
-        for(String nombre : nombres) {
-            System.out.println(nombre);                       
-        }
-        
-        /*
-        int i = 0;
-        while(i < nombres.length) {
-            System.out.println(nombres[i]);
-
-            i++;
-        }
-        */
+        System.out.println(numeros[0][1][3]);
     }
 }
