@@ -15,16 +15,24 @@ int main() {
 	int resultado = 0;
 	int num1 = 0;
 	int num2 = 0;
+	char cadena[16] = "";
 
 	cout<<"Ingrese num1: ";
 	cin>>num1;
 
-	cout<<"Ingrese num2: ";
-	cin>>num2;
+	cin.ignore();
 
-	resultado = sumar(num1,num2);
+	cout<<"Ingrese cadena: ";
+	cin.getline(cadena,16);
 
-	cout<<"La suma es: "<<resultado;
+	cout<<"num1: "<<num1<<"-cadena: "<<cadena<<endl;
+
+//	cout<<"Ingrese num2: ";
+//	cin>>num2;
+//
+//	resultado = sumar(num1,num2);
+//
+//	cout<<"La suma es: "<<resultado;
 
 	return 0;
 }
