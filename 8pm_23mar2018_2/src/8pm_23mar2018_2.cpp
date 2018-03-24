@@ -9,14 +9,20 @@
 #include <iostream>
 using namespace std;
 
-void f1(int i) {
-	cout<<"paso x f1: "<<i<<endl;
+void f1(int k) {
+	cout<<"paso x f1: "<<k<<endl;
+}
+void f2(int i) {
+	cout<<"paso x f2: "<<i<<endl;
+}
+
+void wrapper(void (*pf1) (int), int i) {
+	pf1(i);
 }
 
 int main() {
-	void (*pf)(int) = f1;
 
-	pf(20);
+	wrapper(f1,20);
 
 	return 0;
 }
