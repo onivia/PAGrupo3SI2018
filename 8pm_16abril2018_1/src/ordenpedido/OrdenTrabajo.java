@@ -1,5 +1,7 @@
 package ordenpedido;
 
+import facturacion.Factura;
+
 /**
  *
  * @author ONivia
@@ -15,5 +17,11 @@ public class OrdenTrabajo extends Orden {
     @Override
     public void finalizarOrden() {
         System.out.println("se finalizo la orden de trabajo");
+    }
+
+    @Override
+    public void anular() {
+        Factura factura = new Factura();
+        factura.anular();
     }
 }
