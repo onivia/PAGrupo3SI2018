@@ -13,7 +13,8 @@ public class NorthwindRepositorySingleton {
     private static NorthwindFactory instancia = null;
         
     public static NorthwindFactory getInstancia() {
-        if (instancia == null) {
+        
+        if (instancia == null || !instancia.getSession().isOpen()) {
             instancia = getInstancia(NorthwindFactory.HBCONFIGURATIONFILEDEAFAULT);
         }
         
@@ -21,7 +22,7 @@ public class NorthwindRepositorySingleton {
     }
     
     public static NorthwindFactory getInstancia(String hbConfigurationFile) {
-        if (instancia == null) {
+        if (instancia == null || !instancia.getSession().isOpen()) {
             instancia = new NorthwindFactory.NorthwindFactoryBuilder()
                         .hbConfigurationFile(hbConfigurationFile)
                         .abrirSesion()

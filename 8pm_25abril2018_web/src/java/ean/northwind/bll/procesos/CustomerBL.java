@@ -32,7 +32,7 @@ public class CustomerBL {
             cust = customerbe.getCustomerByOrder(order);
         }
         
-        //repositorioNorthwind.closeSession();
+        repositorioNorthwind.closeSession();
         
         return cust;                
     }    
