@@ -53,7 +53,7 @@
             <p>
                 <b>El Id Cliente es: </b><%=customerId%><br>
                 <b>El Cliente es: </b><%=contactName%><br>
-                <a href="actualizacliente.jsp?customerId=<%=customerId%>">Actualizar Cliente</a>
+                <a href="actualizacliente.jsp?customerid=<%=customerId%>">Actualizar Cliente</a>
             </p>        
         <%} else if(estadoPagina == EstadosPagina.MENSAJE) {%>        
             <p>

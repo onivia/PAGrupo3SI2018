@@ -6,6 +6,7 @@ import ean.northwind.dal.entidadesbe.CustomerBE;
 import ean.northwind.dal.entidadesbe.OrderBE;
 import ean.northwind.dal.repositorio.NorthwindFactory;
 import ean.northwind.dal.repositorio.NorthwindRepositorySingleton;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -16,6 +17,34 @@ public class CustomerBL {
     
     public CustomerBL() {
         this.repositorioNorthwind = NorthwindRepositorySingleton.getInstancia();
+    }
+    
+    public String actualizarCustomer(Customer cust) {
+        String respuesta = "OK";
+        CustomerBE customerbe = null;
+        
+        try {
+            customerbe = new CustomerBE(repositorioNorthwind);
+            customerbe.updateCustomer(cust);
+        } catch(Exception ex) {
+            respuesta = ex.getMessage();
+        }
+        
+        repositorioNorthwind.closeSession();
+        
+        return respuesta;
+    }
+    
+    public Customer obtenerCustomerByCustomerID(String CustomerID) {
+        CustomerBE customerbe = null;
+        Customer cust = null;
+        
+        customerbe = new CustomerBE(repositorioNorthwind);
+        cust = customerbe.getCustomer(CustomerID);
+        
+        repositorioNorthwind.closeSession();
+        
+        return cust;
     }
     
     public Customer obtenerCustomerByOrderId(int orderid) {
